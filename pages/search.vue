@@ -30,7 +30,8 @@ export default {
     getHomeMarkers(){
       return this.homes.map((home) => {
         return {
-          ...home._geoloc
+          ...home._geoloc,
+          pricePerNight: home.pricePerNight,
         }
       })
     }

@@ -71,7 +71,12 @@ export default function(context, inject) {
         const bounds = new window.google.maps.LatLngBounds()
         markers.forEach( home => {
             const position = new window.google.maps.LatLng(home.lat, home.lng)
-            const marker = new window.google.maps.Marker({position})
+            const marker = new window.google.maps.Marker({
+                position,
+                label: {
+                    text: `$${home.pricePerNight}`
+                }
+            })
             marker.setMap(map)
             bounds.extend(position)
         })
